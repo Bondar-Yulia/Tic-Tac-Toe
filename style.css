@@ -17,10 +17,12 @@
 }
 
 .tittle.hidden{
-  display: none;
+  opacity: 0;
+  transform: scale(0);
 }
 
 .tittle{
+  transition: transform 0s .5s, opacity .5s;
   z-index: 1;
   position: absolute;
   top:0;
@@ -74,13 +76,14 @@ form div{
 }
 
 .main .player{
-  border: 3px solid transparent;
+  border: 3px solid rgba(128, 128, 128, 0.043);
   background-color: rgba(128, 128, 128, 0.196);
   font-size: 30px;
   border-radius: 10px;
   padding: 8px 20px 8px 14px;
   display: grid;
   grid-template-columns: auto auto;
+  transition: all .15s;
 }
 
 
@@ -115,30 +118,41 @@ form div{
   margin: auto;
   display: grid;
   grid-template-columns: auto auto auto;
-  gap: 10px;
+  gap: 12px;
 }
 
 .gameBoardGrid div{
-    font-style: normal; 
-    background-color: rgba(128, 128, 128, 0.491);
-    width: 120px;
-    height: 120px;
-    font-size: 110px;
-    line-height: 110px;
-    border-radius: 20px;
-    text-align: center;
+  color: transparent;
+  user-select: none;
+  cursor: pointer;
+  font-style: normal; 
+  background-color: rgba(128, 128, 128, 0.34);
+  width: 120px;
+  height: 120px;
+  font-size: 110px;
+  line-height: 110px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0.5px 0.5px 2px 0px rgba(128, 128, 128, 0.5);
+  transition: all .15s;
 }
 
-.block1 {
+.gameBoardGrid div:hover{
+  box-shadow: 0px 0px 8px 1px rgba(128, 128, 128, 0.712);
+}
+
+.gameBoardGrid .block1{
+  text-shadow: 2px 2px 4px var(--second-color);
   color: var(--second-color);
 }
 
-.block2{
+.gameBoardGrid  .block2{
   color: var(--first-color);
+  text-shadow: 2px 2px 4px var(--first-color);
 }
 
 .moduleContainer.hidden{
-  display: none;
+  transform: scale(0);
 }
 
 .moduleContainer{
@@ -151,9 +165,11 @@ form div{
   left: 0;
   bottom: 0;
   right: 0;
+  transition: .6s;
 }
 
 .resultModule{
+  box-shadow: 0px 0px 8px 1px rgba(128, 128, 128, 0.358);
   background-color: white;
   border-radius: 16px;
   height: 200px;
@@ -186,6 +202,7 @@ button{
   text-align: center;
   font-weight: 700;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  box-shadow: 0px 0px 8px 0px var(--first-color);
 }
 
 .resultModule button:hover {
