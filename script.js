@@ -74,7 +74,6 @@ const displayController = (() => {
             block.classList = '';
             block.addEventListener('click', addSign);
         });
-        console.log(playerDisplays[0].classList);
         playerDisplays[0].classList.value = "player one active";
         playerDisplays[1].classList.value = "player two";
         gameBoard.newRound();
