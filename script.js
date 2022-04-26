@@ -23,7 +23,7 @@ const gameBoard = (() => {
         return result;
     }    
     const showResult = (name) => {
-        moduleContainer.querySelector(".result").textContent = name ? `${name} has wone!` : "It's a draw";
+        moduleContainer.querySelector(".result").textContent = name ? `${name} has won!` : "It's a draw";
         moduleContainer.classList.remove("hidden");
     }
     const findResult = (x, y, name) => {
