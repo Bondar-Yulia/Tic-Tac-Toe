@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@700&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+:root { 
+  --first-color: rgb(110, 56, 160);
+  --second-color: rgb(226, 43, 220);
+}
+
+.html, body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Libre Bodoni', serif;  
+  text-align: center;
+}
+
+.tittle.hidden{
+  display: none;
+}
+
+.tittle{
+  z-index: 1;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: white;
+  font-size: 22px;
+}
+
+.tittle h1{
+  font-weight: 900;
+  font-size: 90px;
+  margin-top: 6vh;
+  margin-bottom: 6vh;
+  color: var(--first-color);
+  text-shadow: 4px 2px 2px var(--second-color);
+}
+
+form{
+  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  font-size: 28px;
+}
+
+input{
+  color: var(--second-color);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  width: 210px;
+  margin: 10px auto;
+  padding: 6px;
+  border-radius: 8px;
+  border: 2px solid var(--first-color);
+}
+
+form div{
+  margin-top: 15px;
+}
+
+.main{
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: space-around;
+}
+
+.main .player{
+  border: 3px solid transparent;
+  background-color: rgba(128, 128, 128, 0.196);
+  font-size: 30px;
+  border-radius: 10px;
+  padding: 8px 20px 8px 14px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+
+.player span:nth-child(1){
+  font-family: 'Libre Bodoni', serif; 
+}
+
+.player span:nth-child(2){ 
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.player.one span:nth-child(2){
+  color: var(--second-color);
+}
+
+.player.two span:nth-child(2){
+  color: var(--first-color);
+}
+
+.one.active{
+  border-color: var(--second-color);
+}
+
+.two.active{
+  border-color: var(--first-color);
+}
+
+.gameBoardGrid{
+  width: fit-content;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+
+.gameBoardGrid div{
+    font-style: normal; 
+    background-color: rgba(128, 128, 128, 0.491);
+    width: 120px;
+    height: 120px;
+    font-size: 110px;
+    line-height: 110px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.block1 {
+  color: var(--second-color);
+}
+
+.block2{
+  color: var(--first-color);
+}
+
+.moduleContainer.hidden{
+  display: none;
+}
+
+.moduleContainer{
+  backdrop-filter: blur(2.5px);
+  z-index: 1;
+  position: fixed;
+  display: grid;
+  align-items: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.resultModule{
+  background-color: white;
+  border-radius: 16px;
+  height: 200px;
+  width: 350px;
+  margin: auto;
+}
+
+.result{
+  color: var(--second-color);
+  font-size: 28px;
+  margin-top: 38px;
+}
+
+button{
+  border: none; 
+  cursor: pointer;
+  text-transform: uppercase;  
+  font-family: 'Poppins', sans-serif;
+}
+
+.resultModule button {
+  background-color: transparent;
+  border: 2px solid var(--first-color);
+  color: var(--first-color);
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+  width: 130px;
+  text-align: center;
+  font-weight: 700;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.resultModule button:hover {
+  color: #fff;
+  outline: 0;
+  box-shadow: 0 0 40px 40px var(--first-color) inset;
+}
+
+
+/*********BUTTON**************/
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.cta {
+  margin-top: 7vh;
+  display: flex;
+  padding: 10px 45px;
+  font-size: 40px;
+  color: white;
+  background: var(--first-color);
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+}
+
+.cta:focus {
+ outline: none; 
+}
+
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 var(--second-color);
+}
+
+.cta span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover  span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+button span {
+  transform: skewX(15deg) 
+}
+
+span:nth-child(2) {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: var(--second-color);
+  }
+  100% {
+    fill: white;
+  }
+}
+
+
+
+
+
